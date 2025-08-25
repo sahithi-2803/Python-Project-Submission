@@ -18,7 +18,7 @@ def fetch_books_by_genre(genre):
 #If user selected the Invalid Genre
     if genre not in ALLOWED_GENRES:
         raise InvalidGenreError(f"'{genre}' is not a valid genre. Choose from: {', '.join(ALLOWED_GENRES)}")
-# Tp get the Data based on user selected Genre
+# To get the Data based on user selected Genre
     try:
         response = requests.get(API_URL.format(genre=genre))
         response.raise_for_status()
@@ -159,6 +159,6 @@ def main():
     print(random_book_suggestion(filtered_df))
 
 
-# Run the script
+
 if __name__ == "__main__":
     main()
